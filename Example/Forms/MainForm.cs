@@ -42,6 +42,13 @@ namespace Example
             // Hook in all the UI events manually for clarity.
             HookEvents();
 
+            for (int i = 0; i < 26; i++)
+            {
+                object[] obj = { i, "Test Module" };
+                darkDataGridView1.Rows.Add(obj);
+            }
+                
+
             // Build the tool windows and add them to the dock panel
             _dockProject = new DockProject();
             _dockProperties = new DockProperties();
