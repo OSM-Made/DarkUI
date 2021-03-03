@@ -19,7 +19,7 @@ namespace DarkUI.Controls
             RowsDefaultCellStyle.BackColor = Colors.HeaderBackground;
             AlternatingRowsDefaultCellStyle.BackColor = Colors.GreyBackground;
             ColumnHeadersDefaultCellStyle.ForeColor = Colors.LightText;
-            ColumnHeadersDefaultCellStyle.BackColor = Colors.HeaderBackground;
+            ColumnHeadersDefaultCellStyle.BackColor = Colors.LighterBackground;
             EnableHeadersVisualStyles = false;
             DefaultCellStyle.ForeColor = Colors.LightText;
             DefaultCellStyle.BackColor = Colors.HeaderBackground;
