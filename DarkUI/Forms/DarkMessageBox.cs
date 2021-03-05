@@ -68,28 +68,49 @@ namespace DarkUI.Forms
 
         #region Static Method Region
 
-        public static DialogResult ShowInformation(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        public static DialogResult ShowInformation(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok, FormStartPosition StartPosition = FormStartPosition.CenterParent)
         {
-            return ShowDialog(message, caption, DarkMessageBoxIcon.Information, buttons);
+            return ShowDialog(message, caption, DarkMessageBoxIcon.Information, StartPosition, buttons);
         }
 
-        public static DialogResult ShowWarning(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        public static DialogResult ShowWarning(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok, FormStartPosition StartPosition = FormStartPosition.CenterParent)
         {
-            return ShowDialog(message, caption, DarkMessageBoxIcon.Warning, buttons);
+            return ShowDialog(message, caption, DarkMessageBoxIcon.Warning, StartPosition, buttons);
         }
 
-        public static DialogResult ShowError(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        public static DialogResult ShowError(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok, FormStartPosition StartPosition = FormStartPosition.CenterParent)
         {
-            return ShowDialog(message, caption, DarkMessageBoxIcon.Error, buttons);
+            return ShowDialog(message, caption, DarkMessageBoxIcon.Error, StartPosition, buttons);
         }
 
-        private static DialogResult ShowDialog(string message, string caption, DarkMessageBoxIcon icon, DarkDialogButton buttons)
+        private static DialogResult ShowDialog(string message, string caption, DarkMessageBoxIcon icon, FormStartPosition StartPosition, DarkDialogButton buttons)
         {
             using (var dlg = new DarkMessageBox(message, caption, icon, buttons))
             {
+                dlg.StartPosition = StartPosition;
                 var result = dlg.ShowDialog();
                 return result;
             }
+        }
+
+        public static DarkMessageBox ShowInformationLong(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        {
+            return ShowDialogLong(message, caption, DarkMessageBoxIcon.Information, buttons);
+        }
+
+        public static DarkMessageBox ShowWarningLong(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        {
+            return ShowDialogLong(message, caption, DarkMessageBoxIcon.Warning, buttons);
+        }
+
+        public static DarkMessageBox ShowErrorLong(string message, string caption, DarkDialogButton buttons = DarkDialogButton.Ok)
+        {
+            return ShowDialogLong(message, caption, DarkMessageBoxIcon.Error, buttons);
+        }
+
+        private static DarkMessageBox ShowDialogLong(string message, string caption, DarkMessageBoxIcon icon, DarkDialogButton buttons)
+        {
+            return new DarkMessageBox(message, caption, icon, buttons);
         }
 
         #endregion
