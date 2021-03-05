@@ -74,6 +74,7 @@
     <Compile Include="Controls\DarkRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\DarkRichTextBox.cs" />
     <Compile Include="Controls\DarkScrollOrientation.cs" />
     <Compile Include="Controls\DarkTitle.cs">
       <SubType>Component</SubType>
