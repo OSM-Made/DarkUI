@@ -203,6 +203,26 @@ namespace DarkUI.Docking
             return _regions[DarkDockArea.Document].GetContents();
         }
 
+        public List<DarkDockContent> GetContent(DarkDockArea Area)
+        {
+            return _regions[Area].GetContents();
+        }
+
+        public List<DarkDockContent> GetContent()
+        {
+            List<DarkDockContent> Right = _regions[DarkDockArea.Right].GetContents();
+            List<DarkDockContent> Left = _regions[DarkDockArea.Left].GetContents();
+            List<DarkDockContent> Bottom = _regions[DarkDockArea.Bottom].GetContents();
+            List<DarkDockContent> Documents = _regions[DarkDockArea.Document].GetContents();
+
+            List<DarkDockContent> FullList = Right;
+            FullList.Concat(Left);
+            FullList.Concat(Bottom);
+            FullList.Concat(Documents);
+
+            return FullList;
+        }
+
         private void CreateRegions()
         {
             var documentRegion = new DarkDockRegion(this, DarkDockArea.Document);
